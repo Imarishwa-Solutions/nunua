@@ -10,7 +10,7 @@ from pprint import pprint
 
 
 VERIFY_TOKEN      = '12345'
-PAGE_ACCESS_TOKEN = 'EAACGMh4sRe0BAEZAh57D0z7verY4TcLvk6LFnIZCfECMDzfvF4BT4NBWMLxMolPsGAVNyF2wdgHf5MGAo0SjkgHJ5yqLL0LILd1pyewIsB4ucNqcJkeb8wnYvBY7MGFjXYO7gWoFWip65aSCqz1E69F2Xc0rXdMr8HB7aZBpAZDZD'
+PAGE_ACCESS_TOKEN = 'EAACGMh4sRe0BAP6a06vc7ZAbllvoUgRqt7H3GDS3I9ryxLbWAcT1AKBje0RZCTeBbXfcNTcdBMlQ2dkRBFZBcAKSfm5ybSh15tNSmItMdzPWjjB01OvtRQW5icjhDjwUcKLlhgukTVzaJkHQWrXzNyjoKoWEJbGz7rd0aM4KwZDZD'
 
 class Webhook(View):
 	#docstring for Verification
@@ -20,6 +20,7 @@ class Webhook(View):
 				return HttpResponse(request.GET['hub.challenge'],status= 200)
 			else:
 				return HttpResponse("Error,invalid token")
+				
 
 
 

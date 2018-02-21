@@ -7,11 +7,10 @@ import json
 import logging
 from pprint import pprint
 
-# Create your views here.
-logger = logging.getLogger(__name__)
+
 
 VERIFY_TOKEN      = '12345'
-PAGE_ACCESS_TOKEN = 'EAAIAJa4N4gUBAMaTBSnSeHZAhOpERjItaUZBJfGLZCEiKLwuV40wiRCFGfETQyaPB4W1JP357paTs6sHmvEepIsWzCM9lywC4QnJnZBduA6L6oZCsCguY0ZBDuWWm0mfCd6phVCNR4fbQwABVLlsJnqgr8uDkkHAu5tkiDTtcgkQZDZD'
+PAGE_ACCESS_TOKEN = 'EAACGMh4sRe0BAEZAh57D0z7verY4TcLvk6LFnIZCfECMDzfvF4BT4NBWMLxMolPsGAVNyF2wdgHf5MGAo0SjkgHJ5yqLL0LILd1pyewIsB4ucNqcJkeb8wnYvBY7MGFjXYO7gWoFWip65aSCqz1E69F2Xc0rXdMr8HB7aZBpAZDZD'
 
 class Webhook(View):
 	#docstring for Verification

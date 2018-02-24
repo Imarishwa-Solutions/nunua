@@ -13,7 +13,6 @@ from pprint import pprint
 VERIFY_TOKEN      = '12345'
 PAGE_ACCESS_TOKEN = 'EAACGMh4sRe0BAP6a06vc7ZAbllvoUgRqt7H3GDS3I9ryxLbWAcT1AKBje0RZCTeBbXfcNTcdBMlQ2dkRBFZBcAKSfm5ybSh15tNSmItMdzPWjjB01OvtRQW5icjhDjwUcKLlhgukTVzaJkHQWrXzNyjoKoWEJbGz7rd0aM4KwZDZD'
 
-@method_decorator(csrf_exempt)
 class Webhook(View):
 	#docstring for Verification
 	def get(self, request):

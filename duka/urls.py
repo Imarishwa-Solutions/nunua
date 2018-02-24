@@ -20,5 +20,5 @@ from duka.views import Webhook
 #Create url pattern
 
 urlpatterns = [
-	path('webhook/', Webhook.as_view()),
+	path('/', Webhook.as_view()),
 ]

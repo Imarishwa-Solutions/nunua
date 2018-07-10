@@ -76,7 +76,10 @@ $RECYCLE.BIN/
 
 .git/credentials
 
-# End of https://www.gitignore.io/api/macos,linux,windows,vapor
-
 #Apps
 ngrok.exe
+
+#Directory
+env/
+# End of https://www.gitignore.io/api/macos,linux,windows,vapor
+

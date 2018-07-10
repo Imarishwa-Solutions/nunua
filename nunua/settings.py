@@ -26,7 +26,8 @@ SECRET_KEY = 'u@y4k*3-q4fuyahb3b12^ut)4k16nma8$6y54t!uh$r4osbl)-'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'nunuabot.herokuapp.com',
+    '69368232.ngrok.io',
+    '127.0.0.1:8000',
 ]
 
 

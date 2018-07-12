@@ -5,26 +5,30 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.views import generic
+
+
+from duka.messenger_api import *
+from duka.logicController import *
+from duka.contentController import *
+
 import json
-import logging
 from pprint import pprint
 
-from duka.config import *
-from duka.messenger_api import *
-from duka.bot_controller import *
-
+PAGE_ACCESS_TOKEN = settings.PAGE_ACCESS_TOKEN
+VERIFY_TOKEN = settings.VERIFY_TOKEN
+'''
 def post_facebook_message(fbid, recevied_message):
 	user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
 	user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': PAGE_ACCESS_TOKEN}
 	user_details = requests.get(user_details_url, user_details_params).json()
 	
-	fb = FbMessageApi(fbid)
+	fb = FBMessageAPI(fb_id)
 
 	if recevied_message == "hi":
 		content = Hello()
 		fb.text_message(content)
 		return 0
-
+'''
 
 class Webhook(generic.View):
 	#docstring for Verification

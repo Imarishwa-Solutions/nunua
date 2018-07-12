@@ -1,6 +1,13 @@
+import os
+from django.conf import settings
+
 import json
 import requests
-from duka.config import *
+
+PAGE_ACCESS_TOKEN = settings.PAGE_ACCESS_TOKEN
+VERIFY_TOKEN = settings.VERIFY_TOKEN
+
+
 post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s' % PAGE_ACCESS_TOKEN
 
 class FBMessageAPI:

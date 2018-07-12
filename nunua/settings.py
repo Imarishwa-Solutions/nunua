@@ -26,7 +26,7 @@ SECRET_KEY = 'u@y4k*3-q4fuyahb3b12^ut)4k16nma8$6y54t!uh$r4osbl)-'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '69368232.ngrok.io',
+    '356b2393.ngrok.io',
     '127.0.0.1:8000',
 ]
 
@@ -138,3 +138,7 @@ STATICFILES_DIRS = [
     ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#FACEBOOK CONFIGURATIONS
+PAGE_ACCESS_TOKEN = "EAADqWBHjJygBAM8KMoDW4O81ncCVlvgE6JiZCowzZBfkuW8BarfpUEZCnSMxYLbtMsjdcZBE0Rmehr1TcYVP5UrEhFzAqHxcsx73lUwgTy9FGUemI7P4bdEYRxbUy7Eo6zZB5ekYc9ZBHVTP5ZAvCo7D9BW6VuSiplRwfZBLkaoifwZDZD"
+VERIFY_TOKEN = "12345"

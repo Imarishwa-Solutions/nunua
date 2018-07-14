@@ -7,28 +7,33 @@ from django.utils.decorators import method_decorator
 from django.views import generic
 
 
-from duka.messenger_api import *
-from duka.logicController import *
-from duka.contentController import *
+
+from duka.messengerAPI import *
 
 import json
 from pprint import pprint
 
-PAGE_ACCESS_TOKEN = settings.PAGE_ACCESS_TOKEN
 VERIFY_TOKEN = settings.VERIFY_TOKEN
-'''
-def post_facebook_message(fbid, recevied_message):
-	user_details_url = "https://graph.facebook.com/v2.6/%s" % fbid
-	user_details_params = {'fields': 'first_name,last_name,profile_pic', 'access_token': PAGE_ACCESS_TOKEN}
-	user_details = requests.get(user_details_url, user_details_params).json()
-	
+PAGE_ACCESS_TOKEN = settings.PAGE_ACCESS_TOKEN
+
+
+def post_facebook_message(fb_id, recieved_message):
 	fb = FBMessageAPI(fb_id)
 
-	if recevied_message == "hi":
-		content = Hello()
+	if recieved_message == "Get Started":
+		content = GetStarted()
 		fb.text_message(content)
 		return 0
-'''
+	elif recieved_message == "Mpesa":
+		content = Mpesa()
+		fb.text_message(content)
+		return 0
+	else:
+		content = Human()
+		fb.text_message(content)
+		return 0
+
+
 
 class Webhook(generic.View):
 	#docstring for Verification
@@ -46,6 +51,7 @@ class Webhook(generic.View):
 
 	def post(self, request,*args, **kwargs):
 		incoming_message = json.loads(self.request.body.decode('utf-8'))
+		pprint(incoming_message)
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				if 'message' in message:

@@ -3,8 +3,8 @@ from django.conf import settings
 import requests, re
 
 def GetStarted():
-	content = "Hi Sasa"
-	return content
+	payload = "Hi Sasa"
+	return payload
 
 def Mpesa():
 	content = " You have no MPesa Balance"

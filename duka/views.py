@@ -16,6 +16,7 @@ from pprint import pprint
 VERIFY_TOKEN = settings.VERIFY_TOKEN
 PAGE_ACCESS_TOKEN = settings.PAGE_ACCESS_TOKEN
 
+messenger_profile = 'https://graph.facebook.com/v2.6/me/messenger_profile?access_token=%s' % PAGE_ACCESS_TOKEN
 
 def post_facebook_message(fb_id, recieved_message):
 	fb = FBMessageAPI(fb_id)
@@ -24,15 +25,17 @@ def post_facebook_message(fb_id, recieved_message):
 		content = GetStarted()
 		fb.text_message(content)
 		return 0
-	elif recieved_message == "Mpesa":
+	if recieved_message == "Mpesa":
 		content = Mpesa()
 		fb.text_message(content)
 		return 0
+	
+	'''
 	else:
 		content = Human()
 		fb.text_message(content)
 		return 0
-
+	'''
 
 
 class Webhook(generic.View):
@@ -62,7 +65,7 @@ class Webhook(generic.View):
 					except:
 						return HttpResponse()
 				if 'postback' in message:
-					pprint(postback)
+					#pprint(postback)
 					#print('postback')
 					try:
 						post_facebook_message(message['sender']['id'],message['postback']['payload'])
